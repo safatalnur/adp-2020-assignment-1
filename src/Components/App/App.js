@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import HomePage from './homepage'
+import Weather from '../Fetch/weather.js'
 
 
 const App = () => (
@@ -26,8 +27,8 @@ const App = () => (
                     <HomePage />
                 </Route>
                 
-                <Route path="/weather/" exact>
-                    {/* <h1>Weather Page</h1> */}
+                <Route path="/weather/:city" exact>
+                    <Weather/>
                 </Route>
             </Switch>
     </Router>
