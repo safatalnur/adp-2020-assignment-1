@@ -6,6 +6,8 @@ import {
   Link
 } from "react-router-dom";
 
+import HomePage from './homepage'
+
 
 const App = () => (
     <Router>
@@ -21,7 +23,7 @@ const App = () => (
 
             <Switch>
                 <Route path="/" exact>
-                    <h1>Home Page</h1>
+                    <HomePage />
                 </Route>
                 
                 <Route path="/weather/" exact>
