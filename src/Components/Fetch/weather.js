@@ -10,6 +10,7 @@ function Weather() {
       const [data, setData] = useState('')
       const [error, setError] = useState(null)
       const [country, setCountry] = useState(null)
+      const [timezone, setTimezone] = useState(null)
       const [temp, setTemp] = useState(null)
       const [windchill, setWindchill] = useState(null)
       const [mintemp, setMintemp] = useState(null)
@@ -39,6 +40,7 @@ function Weather() {
                         setWind(data.wind.speed)
                         setSunrise(data.sys.sunrise)
                         setSunset(data.sys.sunset)
+                        setTimezone(data.timezone)
                         setDesc(data.weather[0].description)
                         setIcon(data.weather[0].icon)
 
@@ -74,6 +76,7 @@ function Weather() {
                               wind = {wind}
                               sunrise = {sunrise}
                               sunset = {sunset}
+                              timezone = {timezone}
                               desc = {desc}
                               icon = {icon}
                         />

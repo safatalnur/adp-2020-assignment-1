@@ -64,13 +64,9 @@ const ShowWeather = props => (
                  <p className="weather_key">
                         Sunrise : 
                         <span className="weather_value">
-                              {
-                                    //  Moment(props.sunrise).format("h:mm:ss a").tz("America/Toronto").format()
-                                    // (Moment.tz((props.sunrise), "America/Toronto")).format()
-                                    (new Date(props.sunrise)).getHours() 
-
-                              }
-                              {/* {props.sunrise} */}
+                             {
+                                    Moment(props.sunrise*1000).format("h:mm:ss a")
+                             } 
                         </span>
                   </p>
             )}
@@ -79,11 +75,9 @@ const ShowWeather = props => (
                   <p className="weather_key">
                         Sunset : 
                         <span className="weather_value">
-                              {
-                              // (Moment.tz((props.sunset),"America/Toronto")).format()
-                              (new Date(props.sunset)).toLocaleTimeString()
-                              }
-                              {/* {props.sunset} */}
+                             {
+                              Moment(props.sunset*1000).format("h:mm:ss a")
+                             }
                         </span>
                   </p>
             )}
