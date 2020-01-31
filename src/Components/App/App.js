@@ -15,7 +15,7 @@ const App = () => (
             <Link to="/">
                 Home
             </Link>
-            {' '}
+            
             <Link to="/weather">
                 Weather
             </Link>
@@ -27,7 +27,7 @@ const App = () => (
                 </Route>
                 
                 <Route path="/weather/" exact>
-                    <h1>Weather Page</h1>
+                    {/* <h1>Weather Page</h1> */}
                 </Route>
             </Switch>
     </Router>
