@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
+import ShowWeather from '../Fetch/showweather.js'
+
 
 function Weather() {
 
@@ -55,7 +57,19 @@ function Weather() {
 
       return (
             <div className="weatherInfo">
-                  <h1>Testing</h1>
+                  <ShowWeather
+                        city = {city}
+                        country = {country}
+                        temp = {temp}
+                        windchill = {windchill}
+                        mintemp = {mintemp}
+                        maxtemp = {maxtemp}
+                        wind = {wind}
+                        sunrise = {sunrise}
+                        sunset = {sunset}
+                        desc = {desc}
+                        icon = {icon}
+                  />
             </div>
 
       )
