@@ -1,0 +1,115 @@
+"use strict";
+
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireWildcard(require("react"));
+
+  var _reactRouterDom = require("react-router-dom");
+
+  var _showweather = _interopRequireDefault(require("../Fetch/showweather.js"));
+
+  var _s = $RefreshSig$();
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+  function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+  function Weather() {
+    _s();
+
+    const [search, setSearch] = (0, _react.useState)('');
+    const [query, setQuery] = (0, _react.useState)('');
+    const [data, setData] = (0, _react.useState)('');
+    const [error, setError] = (0, _react.useState)(null);
+    const [country, setCountry] = (0, _react.useState)(null);
+    const [temp, setTemp] = (0, _react.useState)(null);
+    const [windchill, setWindchill] = (0, _react.useState)(null);
+    const [mintemp, setMintemp] = (0, _react.useState)(null);
+    const [maxtemp, setMaxtemp] = (0, _react.useState)(null);
+    const [wind, setWind] = (0, _react.useState)(null);
+    const [sunset, setSunset] = (0, _react.useState)(null);
+    const [sunrise, setSunrise] = (0, _react.useState)(null);
+    const [desc, setDesc] = (0, _react.useState)(null);
+    const [icon, setIcon] = (0, _react.useState)();
+    const {
+      city
+    } = (0, _reactRouterDom.useParams)();
+    (0, _react.useEffect)(() => {
+      async function fetchWeatherInfo() {
+        try {
+          const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=70d2c07e6b32015a291efb7231eb5f74&units=metric`);
+          const data = await response.json(); // setCity(data.name)
+
+          setCountry(data.sys.country);
+          setTemp(data.main.temp);
+          setWindchill(data.main.feels_like);
+          setMintemp(data.main.temp_min);
+          setMaxtemp(data.main.temp_max);
+          setWind(data.wind.speed);
+          setSunrise(data.sys.sunrise);
+          setSunset(data.sys.sunset);
+          setDesc(data.weather[0].description);
+          setIcon(data.weather[0].icon);
+          console.log(data);
+        } catch (error) {
+          setError("Please enter city,CountryAbb");
+          setCity("");
+        }
+      }
+
+      if (city !== '') {
+        fetchWeatherInfo();
+      }
+    }, [query]);
+    return _react.default.createElement("div", {
+      className: "weatherBodyContainer"
+    }, _react.default.createElement("div", {
+      className: "weatherBodyBox"
+    }, _react.default.createElement("div", {
+      className: "cityName"
+    }, _react.default.createElement("h1", null, "City: ", city, " "), _react.default.createElement("img", {
+      src: "/App/weather-cartoon.jpg",
+      alt: "weather-cartoon"
+    })), _react.default.createElement(_showweather.default, {
+      city: city,
+      country: country,
+      temp: temp,
+      windchill: windchill,
+      mintemp: mintemp,
+      maxtemp: maxtemp,
+      wind: wind,
+      sunrise: sunrise,
+      sunset: sunset,
+      desc: desc,
+      icon: icon
+    })));
+  }
+
+  _s(Weather, "i0HVX2bjJjQCmXu5eOr/o3RCukY=", false, function () {
+    return [_reactRouterDom.useParams];
+  });
+
+  _c = Weather;
+  var _default = Weather;
+  exports.default = _default;
+
+  var _c;
+
+  $RefreshReg$(_c, "Weather");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

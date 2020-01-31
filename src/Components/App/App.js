@@ -14,11 +14,11 @@ const App = () => (
     <Router>
         <div>
             <Link to="/">
-                Home
+                
             </Link>
             
             <Link to="/weather">
-                Weather
+                
             </Link>
         </div>
 

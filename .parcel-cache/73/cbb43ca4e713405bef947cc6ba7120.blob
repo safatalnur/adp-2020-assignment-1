@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:100, 200, 300, 300i, 400, 400i, 700");
+
+.bodyContainer {
+      background: linear-gradient(to right, #ffc371, #ff5f6d);
+      height: 100vh;
+      width: 100%;
+      text-align: center;
+}
+
+.bodyContainer h1 {
+      text-decoration: underline;
+      text-transform: uppercase;
+      padding-top: 20%;
+}
+
+.bodyContainer p {
+      font-size: 20px;
+}
+
+.weatherBodyContainer {
+      background: linear-gradient(to right, #ffc371, #ff5f6d);
+      height: 100vh;
+
+}
+.weatherBodyBox {
+      height: 80vh;
+      width: 90vw;
+      margin: auto auto;
+      background: linear-gradient(to right, #ff7e5f, #ffc371);
+      border: 10px solid #ff7e5f;
+      box-shadow: 0px 15px 45px -15px rgba(0,0,0,0.75);
+      display: grid;
+      grid-template-columns: auto auto;
+
+}
+
+.weather_data {
+      display: grid;
+      grid-template-columns: auto;
+      justify-content: center;
+      
+}
+
+.weather_key {
+      color: black;
+      font-family: "Merriweather", sans-serif;
+      font-weight: 700;
+}
+
+.weather_value {
+      color: white;
+      font-weight: 100;
+      font-style: italic;
+      padding-left: 10px;
+}
+
+.weather_value img {
+      width: 100px;
+      height: 100px;
+      align-content: center;
+}
+
+.cityName {
+      text-align: center;
+}
+

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import ShowWeather from '../Fetch/showweather.js'
-
+import weatherCartoon from "../App/weather-cartoon.jpg"
 
 function Weather() {
 
@@ -56,25 +56,31 @@ function Weather() {
       }, [query])
 
       return (
-            <div className="weatherInfo">
-                  <ShowWeather
-                        city = {city}
-                        country = {country}
-                        temp = {temp}
-                        windchill = {windchill}
-                        mintemp = {mintemp}
-                        maxtemp = {maxtemp}
-                        wind = {wind}
-                        sunrise = {sunrise}
-                        sunset = {sunset}
-                        desc = {desc}
-                        icon = {icon}
-                  />
+            <div>
+                  <div className="weatherBodyContainer">
+                        <div className="weatherBodyBox">
+                        <div className="cityName">
+                              <h1>City: {city} </h1>
+                              <img src={weatherCartoon} alt="weather-cartoon" height="400" width="400"/>
+                        </div>
+
+                        <ShowWeather
+                              city = {city}
+                              country = {country}
+                              temp = {temp}
+                              windchill = {windchill}
+                              mintemp = {mintemp}
+                              maxtemp = {maxtemp}
+                              wind = {wind}
+                              sunrise = {sunrise}
+                              sunset = {sunset}
+                              desc = {desc}
+                              icon = {icon}
+                        />
             </div>
-
+      </div>
+</div>
       )
-
-
 }
 
 export default Weather
