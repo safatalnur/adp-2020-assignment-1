@@ -3,13 +3,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import {Link} from 'react-router-dom'
 
+//Homepage input seciton material ui styling
 const useStyles = makeStyles(theme => ({
       root: {
-            '& > *': {
-                  margin: theme.spacing(1),
-                  width: 400,
-                  // textAlign:'center',
-                  },
+            '& > *':{
+                        margin: theme.spacing(1),
+                        width: 400,
+                    },
             },
       submitButton: {
             padding: 10,
@@ -27,13 +27,7 @@ function HomePage () {
       const classes = useStyles();
       const [search, setSearch] = useState('')
       // const [query, setQuery] = useState('')
-
-//       function onSubmit(e) {
-//             e.preventDefault()
-//             setQuery(search)
-//             console.log(search)
-// }
-
+      //Adding the name of searched city and create a new page
       const url = "/weather/".concat(search)
 
       return (
@@ -43,6 +37,7 @@ function HomePage () {
                         <p>Find weather info for 200,000+ cities around the World!!!!!! </p>
                   </div>
 
+                  {/* Material ui form */}
                   <div className="bodyInput">
                         <form className={classes.root} noValidate autoComplete="off">
                               <TextField id="standard-basic" label="Please Enter a City, Country(Abb)" value={search} onChange={e=>setSearch(e.currentTarget.value)} />
@@ -52,7 +47,9 @@ function HomePage () {
                               </Link>
                         </form>
                   </div>
+
             </div>
       )
 }
+
 export default HomePage

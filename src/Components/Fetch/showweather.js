@@ -3,6 +3,7 @@ import Moment from 'moment'
 import MomentTimeZone from 'moment-timezone'
 
 
+//Api calling for data
 const ShowWeather = props => (
 
       <div className="weather_data">
@@ -60,6 +61,7 @@ const ShowWeather = props => (
                   </p>
             )}
 
+            {/* Moment functional plugin was used to convert timestamp to readable time */}
             {props.sunrise != null && (
                  <p className="weather_key">
                         Sunrise : 
@@ -71,12 +73,13 @@ const ShowWeather = props => (
                   </p>
             )}
 
+            {/* Moment functional plugin was used to convert timestamp to readable time */}
             {props.sunset != null && (
                   <p className="weather_key">
                         Sunset : 
                         <span className="weather_value">
                              {
-                              Moment(props.sunset*1000).format("h:mm:ss a")
+                                    Moment(props.sunset*1000).format("h:mm:ss a")
                              }
                         </span>
                   </p>
@@ -101,6 +104,6 @@ const ShowWeather = props => (
             )}
 
       </div>
-      )
+)
 
 export default ShowWeather

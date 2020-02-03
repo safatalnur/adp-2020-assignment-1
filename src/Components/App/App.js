@@ -14,11 +14,9 @@ const App = () => (
     <Router>
         <div>
             <Link to="/">
-                
             </Link>
             
             <Link to="/weather">
-                
             </Link>
         </div>
 
@@ -26,7 +24,7 @@ const App = () => (
                 <Route path="/" exact>
                     <HomePage />
                 </Route>
-                
+
                 <Route path="/weather/:city" exact>
                     <Weather/>
                 </Route>
