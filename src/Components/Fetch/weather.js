@@ -23,7 +23,7 @@ function Weather() {
 
                   if (city !== "") {
                         fetchWeatherInfo();
-                  }l
+                  }
       }, []);
 
       if (!data) {
