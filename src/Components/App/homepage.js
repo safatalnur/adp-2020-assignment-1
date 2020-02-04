@@ -26,8 +26,6 @@ function HomePage () {
 
       const classes = useStyles();
       const [search, setSearch] = useState('')
-      // const [query, setQuery] = useState('')
-      //Adding the name of searched city and create a new page
       const url = "/weather/".concat(search)
 
       return (
