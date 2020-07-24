@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ShowWeather from "../Fetch/showweather.js";
 import weatherCartoon from "../App/weather-cartoon.jpg";
+require('dotenv').config()
 
 
 function Weather() {
