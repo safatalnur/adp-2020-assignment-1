@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import ShowWeather from "../Fetch/showweather.js";
 import weatherCartoon from "../App/weather-cartoon.jpg";
 
+
 function Weather() {
       const { city } = useParams();
       const [data, setData] = useState("");
@@ -12,7 +13,7 @@ function Weather() {
             async function fetchWeatherInfo() {
                   try {
                         const response = await fetch(
-                              `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=d4abfe2b3c74317aab5560c3bfcc01b5&units=metric`
+                              `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
                         );
                         const data = await response.json();
                         setData(data);
