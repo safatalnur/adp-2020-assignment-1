@@ -62,29 +62,29 @@ const ShowWeather = props => (
             )}
 
             {/* Moment functional plugin was used to convert timestamp to readable time */}
-            {props.sunrise != null && (
+            {/* {props.sunrise != null && (
                  <p className="weather_key">
                         Sunrise : 
                         <span className="weather_value">
                              {
-                                    Moment(props.sunrise*1000).format("h:mm:ss a")
+                                    Moment.unix(props.sunrise).format("h:mm:ss a")
                              } 
                         </span>
                   </p>
             )}
-
+ */}
             {/* Moment functional plugin was used to convert timestamp to readable time */}
-            {props.sunset != null && (
+            {/* {props.sunset != null && (
                   <p className="weather_key">
                         Sunset : 
                         <span className="weather_value">
                              {
-                                    Moment(props.sunset*1000).format("h:mm:ss a")
+                                    Moment.unix(props.sunset).format("h:mm:ss a")
                              }
                         </span>
                   </p>
             )}
-
+ */}
             {props.desc && (
                   <p className="weather_key">
                         Description : 

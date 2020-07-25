@@ -62,8 +62,8 @@ function Weather() {
                                           mintemp={data.main.temp_min}
                                           maxtemp={data.main.temp_max}
                                           wind={data.wind.speed}
-                                          sunrise={data.sys.sunrise}
-                                          sunset={data.sys.sunset}
+                                          // sunrise={data.sys.sunrise}
+                                          // sunset={data.sys.sunset}
                                           desc={data.weather[0].description}
                                           icon={data.weather[0].icon}
                                     />
